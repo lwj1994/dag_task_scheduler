@@ -1,0 +1,14 @@
+name: annotation
+description: lib
+version: 1.0.0
+
+
+environment:
+  sdk: '>=3.0.0'
+
+dependencies:
+  meta: ^1.9.1
+  collection: ^1.18.0
+
+dev_dependencies:
+  dart_flutter_team_lints: ^1.0.0

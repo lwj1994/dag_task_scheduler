@@ -1,0 +1,16 @@
+name: dag_task_scheduler
+
+packages:
+  - example
+  - annotation
+ignore:
+
+
+scripts:
+  analyze:
+    exec: dart analyze .
+  format:
+    exec: dart format .
+
+
+

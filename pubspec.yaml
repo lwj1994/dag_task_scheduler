@@ -1,0 +1,14 @@
+name: dag_task_scheduler
+
+environment:
+  sdk: '>=3.0.0'
+
+# This allows us to use melos on itself during development.
+executables:
+  melos: melos_dev
+
+dev_dependencies:
+  melos: ^3.1.0
+  path: ^1.8.3
+  yaml: ^3.1.2
+
