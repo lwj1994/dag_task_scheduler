@@ -1,6 +1,7 @@
 import 'dart:async';
 
-import 'package:annotation/annotation.dart';
+import 'package:dag_task_scheduler_annotation/annotation.dart';
+
 
 /// @author luwenjie on 2023/8/27 14:48:31
 ///
@@ -28,7 +29,7 @@ test() {
     ..addTask(TaskA())
     ..addTask(TaskB())
     ..addTask(TaskC())
-    ..addTask(TaskD())
+    ..addTask(TaskD(dependencies: ["B"]))
     ..addTask(TaskE())
     ..addTask(TaskF(),last: true)
     ..setCallback(callback)
@@ -47,6 +48,8 @@ class TaskA extends DagTask {
 }
 
 class TaskB extends DagTask {
+  TaskB({super.dependencies});
+
   @override
   String get id => "B";
 
@@ -72,8 +75,7 @@ class TaskC extends DagTask {
 }
 
 class TaskD extends DagTask {
-  @override
-  List<String> get dependencies => ["A"];
+
 
   @override
   String get id => "D";
@@ -83,6 +85,8 @@ class TaskD extends DagTask {
     print("TaskD run");
     await Future.delayed(Duration(milliseconds: 800));
   }
+
+  TaskD({super.dependencies});
 }
 
 class TaskE extends DagTask {

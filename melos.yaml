@@ -3,6 +3,7 @@ name: dag_task_scheduler
 packages:
   - example
   - annotation
+  - builder
 ignore:
 
 

@@ -8,11 +8,13 @@ import 'directed_acyclic_graph.dart';
 /// IN return value
 /// R return value
 abstract class DagTask {
-  List<String> get dependencies => [];
+  final List<String> dependencies;
 
   abstract final String id;
 
-  FutureOr run();
+  FutureOr<void> run();
+
+  DagTask({this.dependencies = const []});
 }
 
 class Scheduler {
